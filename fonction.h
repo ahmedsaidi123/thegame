@@ -10,7 +10,7 @@
 
 typedef struct player
 {
-SDL_Surface *joueur;
+SDL_Surface *sprite;
 int invicibleTimer;
 int x;
 int y;
@@ -29,19 +29,5 @@ int saveY;
 int checkpointActif;
 int type;
 }player;
-typedef struct game_object
-{player pl;
-player objects[10];
-player ennemies[10];
-player ennemie_leader;
-}game_object;
-typedef struct object_name
-{char nom[10];
-}object_name;
-void initialize_objet(int x[],int y[],game_object *game_object,object_name t_obj[]);
-void display(player *pl,SDL_Rect pospl,SDL_Surface *ecran);
- SDL_Surface * initialize_player(player *pl,int x,int y);
-void affiche_object(game_object *game_object,SDL_Rect pospl[],SDL_Surface *ecran)
-#endif
-
-
+SDL_Surface* initialise_player(player *pl,int x,int y);
+#endif			
